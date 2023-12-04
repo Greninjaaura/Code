@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-</head>
+<html lang="en">
+  <head></head>
 <body>
-  <h5 style="text-align: center; font-size: 15px; background-color: #e0e0e0; padding: 20px 0; display: block;">
-    <i class="fas fa-code"></i> CODE
-  </h5>
+<div id="dvCountDown" style="font-size:25px; text-align:center; 
+	left: 0;
+    margin-top: -100px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;">
+Pls wait,countdown <span id="lblCount"></span>&nbsp;s.
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+<script type="text/javascript">
+$(function () {
+   
+        var seconds = 3;
+        $("#dvCountDown").show();
+        $("#lblCount").html(seconds);
+        setInterval(function () {
+            seconds--;
+            $("#lblCount").html(seconds);
+            if (seconds == 0) {
+                $("#dvCountDown").hide();
+                window.location = "#";
+            }
+        }, 1000);
+		
+   
+});
+</script>
+
 </body>
 </html>
